@@ -7,7 +7,7 @@ import { faMobileAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mobile-store-web';
+  title = 'Mobile-Store';
   faMobileAlt = faMobileAlt;
 
   
