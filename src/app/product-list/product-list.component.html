@@ -3,7 +3,7 @@
 <div class="card">
 
           <div class="card-header">
-            <h4>Mobile Phones</h4> 
+            <h4>Mobile Phones {{ratingLabel}}</h4> 
             <br>
           <div class="row">
               <div class="col">
@@ -26,6 +26,7 @@
                                   <th >Name</th>
                                   <th >Description</th>
                                   <th >Price</th>
+                                  <th >Rating</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -40,8 +41,11 @@
                                     {{product.description | slice : 0 :10}}
                                   </span>
                                   </td>
-                                  
                                   <td>{{product.price | currency : 'INR'}}</td>
+                                  <td><app-star [rating]="product.rating" [title]='product.rating'
+                                       (ratingClick)='ratingChanged($event)'>
+                                       </app-star></td>
+                                  <!-- <td>{{product.rating}}</td> -->
                                 </tr>
                               </tbody>
                             </table>

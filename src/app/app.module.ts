@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductListComponent } from './product-list/product-list.component'
 import { convertTospace } from './convert-to-space.pipe';
+import { StarComponent } from './star/star.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    convertTospace
+    convertTospace,
+    StarComponent
   ],
   imports: [
     BrowserModule,
