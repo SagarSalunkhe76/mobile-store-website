@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductListComponent } from './product-list/product-list.component'
 import { convertTospace } from './convert-to-space.pipe';
 import { StarComponent } from './star/star.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { StarComponent } from './star/star.component';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
