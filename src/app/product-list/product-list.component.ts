@@ -50,9 +50,16 @@ export class ProductListComponent implements OnInit {
    }
 
   ngOnInit() { 
+    this.Ps.getProducts().subscribe(product=> {
+      this.featuredProduct = this.products = product;
+  },error=>{
+            console.log(error);
+            alert(error);
+          })
+
     this.Ps.testObservable().subscribe(data => 
       {console.log(data)});
-    this.featuredProduct = this.products = this.Ps.getProducts();
+    // this.featuredProduct = this.products = this.Ps.getProducts();
   }
 
 }
