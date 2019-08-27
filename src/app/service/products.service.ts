@@ -26,6 +26,20 @@ export class ProductsService {
    );
   }
 
+  getProductsById(id: number): Observable<IProduct>{
+    return this.http.get<IProduct[]>('http://localhost:4200/assets/product-list.json')
+    .pipe(
+      delay(1000),
+      map((product: IProduct[]) => {
+        const prs = product.filter(p => p.id === id);
+        return prs.length > 0 && prs[0];
+      }),
+      tap(data => {console.log("data:", data)}),
+      catchError(this.handleError)
+    );
+   }
+
+
   handleError(err: HttpErrorResponse){
     let msg = '';
     if(err.error instanceof HttpErrorResponse){

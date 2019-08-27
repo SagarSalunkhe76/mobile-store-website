@@ -1,5 +1,15 @@
 
 <div class="container">
 <h1><fa-icon [icon]="faMobileAlt"></fa-icon><span>  {{title}}</span></h1>
+
+<ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" RouterLinkActive="active" [routerLink]="['/home']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" RouterLinkActive="active" [routerLink]="['/product']">Product</a>
+          </li>
+</ul>
+ <router-outlet></router-outlet>
 </div>
-<app-product-list></app-product-list>
+

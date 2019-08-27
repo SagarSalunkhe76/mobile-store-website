@@ -1,0 +1,14 @@
+<div class="card" *ngIf="product">
+          <div class="card-header">
+            Product Details - {{product.id}}
+          </div>
+          <div class="card-body">
+            <h3>{{product.name}}</h3>
+            <p>{{product.description}}</p>
+            <img [src]='product.imageUrl' >
+            <div>
+             Rating :<app-star [rating]="product.rating" [title]='product.rating'></app-star>
+            </div>
+            <p>Price : {{product.price | currency : 'INR'}}</p>
+          </div>
+        </div>
