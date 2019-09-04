@@ -14,11 +14,16 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductdetailsGuard } from './productdetails.guard';
 
 const appRoutes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'product', component:ProductListComponent},
-  {path:'product/:id', component:ProductDetailsComponent},
+
+  { path:'product/:id', 
+    canActivate: [ProductdetailsGuard],
+    component:ProductDetailsComponent},
+
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'**',component:PageNotFoundComponent}
  ]
